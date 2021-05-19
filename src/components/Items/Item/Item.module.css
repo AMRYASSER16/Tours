@@ -1,0 +1,17 @@
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.card-title span:last-child{
+    color: #fff;
+    background-color: #49a6e9;
+    padding: 2px 12px;
+}
+
+.details p {
+    margin-bottom: 1.25rem;
+    color: #617d98;
+    line-height: 24px;
+}
