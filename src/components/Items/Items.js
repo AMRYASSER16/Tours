@@ -41,20 +41,18 @@ class Items extends React.Component {
 
     removeItemsHandler(item) {
         const index = this.itemsList.indexOf(item);
-        let newItemsList;
-        if (index > -1) {
-            newItemsList = this.itemsList.splice(index, 1);
-        }
+        const newItemsList = this.itemsList.splice(index, 1);
         this.setState({
             items: newItemsList
         })
     }
 
     render() {
-        const data = this.itemsList.map(item => <Item key={item.id} img={item.img} title={item.title} cost={item.cost} details={item.details} removeItemHandler={this.removeItemsHandler.bind(this, item)} />);
+        let data = this.itemsList.map(item => <Item key={item.id} img={item.img} title={item.title} cost={item.cost} details={item.details} removeItemHandler={this.removeItemsHandler.bind(this, item)} />);
         return (
             <Fragment>
                 {data}
+                {this.itemsList.length === 0 && <p style={{textAlign:'center'}}>no items found</p>}
             </Fragment>
         )
     }
